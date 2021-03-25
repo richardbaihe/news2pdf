@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lettrine}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+% \DeclareUnicodeCharacter{2032}{’}
+% \DeclareUnicodeCharacter{00A5}{￥}
+% \DeclareUnicodeCharacter{00BD}{½}
+
+
+% paper size and margin size
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=10mm
+ }
+
+
+ \titleformat
+{\section} % command
+[block] % shape
+{\bfseries\Large\bfseries\color{white}} % format
+{} % label
+{0pt} % sep
+{
+  \colorsection
+} % before-code
+[
+  % \vspace{-0.5ex}%
+  % \color{black}\rule{\textwidth}{0.6pt}
+] % after-code
+
+\newcommand{\colorsection}[1]{%
+  \colorbox{red}{\parbox{\dimexpr\textwidth/3}{#1}}}
+
+
+\titleformat
+{\subsection} % command
+[block] % shape
+{\bfseries\Large\bfseries\centering} % format
+{} % label
+{0pt} % sep
+{
+} % before-code
+[
+] % after-code
+
+\titleformat
+{\subsubsection} % command
+[block] % shape
+{\bfseries\large\bfseries\centering\color{red}} % format
+{} % label
+{0pt} % sep
+{
+} % before-code
+[
+] % after-code
+
+\titleformat
+{\paragraph} % command
+[block] % shape
+{\bfseries\normalsize\bfseries\centering} % format
+{} % label
+{0pt} % sep
+{
+} % before-code
+[
+] % after-code
+
+
+
+\setcounter{tocdepth}{2}
+
+
+\titlecontents{section}[0em]
+{}%
+{\color{red}\bfseries\large\bfseries}% numbered sections formatting
+{}% unnumbered sections formatting
+{}
+
+
+\titlecontents{subsection}[1.5em]
+{}
+{\thecontentspage \quad}
+{}
+{}
+
+
+\begin{document}
+\begin{multicols}{2}
+\tableofcontents
+\end{multicols}
+\newpage
